@@ -1,11 +1,16 @@
 module Exercise
   module Arrays
     class << self
-      def replace(array)
-        max = 0
+      def search_max(array)
+        max = array[0]
         for el in array
           max = el if el > max
         end
+        max
+      end
+
+      def replace(array)
+        max = search_max(array)
         array_res = []
         for el in array
           el = max if el.positive?
